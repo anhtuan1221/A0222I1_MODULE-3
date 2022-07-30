@@ -1,5 +1,5 @@
-create database if not exists QuanLySinhVien;
-use QuanLySinhVien;
+create database if not exists QuanLySinhVienThucHanh;
+use QuanLySinhVienThucHanh;
 create table Class(
 ClassID int not null auto_increment primary key,
 ClassName varchar(60) not null,
@@ -49,17 +49,34 @@ insert into Mark (SubId, StudentId, Mark, ExamTimes)
 values (1, 1, 8, 1),
        (1, 2, 10, 2),
        (2, 1, 12, 1);
--- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’
-select * from Student where StudentName like 'h%';
--- Hiển thị các thông tin lớp học có thời gian bắt đầu vào tháng 12.
-select * from Class where month(StartDate)=12;
--- Hiển thị tất cả các thông tin môn học có credit trong khoảng từ 3-5.
-select * from Subject where Credit between 3 and 5;
--- Thay đổi mã lớp(ClassID) của sinh viên có tên ‘Hung’ là 2.
-update Student set ClassID=2 where StudentName = 'Hung';
-select * from Student;
--- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
-select StudentName,SubName,Mark
+select Address, count(StudentID) as 'Số lượng học viên'
+from Student group by Address;
+
+select s.StudentID, s.StudentName, avg(Mark)
 from Student s join Mark m on s.StudentID=m.StudentID
-join Subject sub on m.SubID= sub.SubID
-order by  Mark desc , StudentName;
+group by s.StudentID,s.StudentName;
+
+select s.StudentID, s.StudentName, avg(Mark)
+from Student s join Mark m on s.StudentID=m.StudentID
+group by s.StudentID,s.StudentName
+having avg(Mark)>15;
+
+select s.StudentID, s.StudentName, avg(Mark)
+from Student s join Mark m on s.StudentID=m.StudentID
+group by s.StudentID,s.StudentName
+having avg(Mark) >= all (select avg(Mark) from Mark Group by Mark.StudentID);
+select * from `Subject`;
+-- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
+select * 
+from `Subject` 
+where Credit= (select max(Credit) from `Subject`);
+
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
+select s.SubName, m.Mark from `Subject` s
+join Mark m on s.SubID=m.SubID
+where Mark = (select max(Mark)from Mark);
+
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
+select *,avg(m.Mark) as `Mark` from Student s
+join Mark m on s.StudentID=m.StudentID
+order by m.Mark desc;
