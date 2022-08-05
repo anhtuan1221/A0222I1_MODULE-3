@@ -355,7 +355,20 @@ select * from khach_hang;
 -- 18.Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc
 -- giữa các bảng
 
-
+DELETE FROM
+    khach_hang kh
+WHERE
+    NOT EXISTS (
+        select
+            *
+        FROM
+            hop_dong
+        WHERE
+            kh.ma_khach_hang = ma_khach_hang
+            and YEAR(ngay_lam_hop_dong) >= 2021
+    );
+    select * from khach_hang;
+	
 
 -- 19.Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong
 -- năm 2020 lên gấp đôi.
