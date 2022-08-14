@@ -358,15 +358,15 @@ select * from khach_hang;
 DELETE FROM
     khach_hang kh
 WHERE
-    NOT EXISTS (
+     ma_khach_hang NOT in (
         select
-            *
+            ma_khach_hang
         FROM
             hop_dong
         WHERE
-            kh.ma_khach_hang = ma_khach_hang
-            and YEAR(ngay_lam_hop_dong) >= 2021
-    );
+            YEAR(ngay_lam_hop_dong) >= 2021
+            group by ma_khach_hang
+    ); 
     select * from khach_hang;
 	
 
