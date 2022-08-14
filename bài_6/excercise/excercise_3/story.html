@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TRUYỆN NGẮN</title>
+    <title>Title</title>
+    <link rel="stylesheet" href="story_css.css">
 </head>
 <body>
-
+<div class="head">
+    <p>
+        <img src="data:image/png;base64,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"
+             style="width: 100%"height="100"></p>
+</div>
+<div class="row">
+    <div class="col-s-12 col-m-4 col-l-3 left">
+        <ul>
+            <li><h5><a href="http://www.nettruyenme.com/truyen-tranh/tham-tu-conan-46387">Truyện conam</a></h5></li>
+            <li><h5><a href="http://www.nettruyenme.com/truyen-tranh/tham-tu-conan-46387">Truyện doraemon</a></h5></li>
+            <li><h5><a href="http://www.nettruyenme.com/truyen-tranh/tham-tu-conan-46387">Truyện attack on titan</a></h5></li>
+            <li><h5><a href="http://www.nettruyenme.com/truyen-tranh/tham-tu-conan-46387">Truyện marvel</a></h5></li>
+            <li><h5><a href="http://www.nettruyenme.com/truyen-tranh/tham-tu-conan-46387">Truyện viet nam</a></h5></li>
+        </ul>
+    </div>
+    <div class="col-s-12 col-m-8  col-l-6 contain">
+        <div class="row">
+            <div class=" col-s-12 col-m-4">
+                <img src="da_nang.jpg" width="100%"/></div>
+            <div class=" col-s-12 col-m-8">
+                <h2>Truyện Ngắn</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Truyện ngắn là một thể loại văn học. Nó thường là các câu chuyện kể bằng văn xuôi và có xu hướng ngắn gọn, súc tích và hàm nghĩa hơn các câu truyện dài như tiểu thuyết.
+                Thông thường truyện ngắn có độ dài chỉ từ vài dòng đến vài chục trang, trong khi đó tiểu thuyết rất khó dừng lại ở con số đó. Vì thế, tình huống truyện luôn là vấn đề quan trọng bậc nhất của nghệ thuật truyện ngắn.
+                Truyện ngắn thường chỉ tập trung vào một tình huống, một chủ đề nhất định. Trong khi đó, tiểu thuyết chứa được nhiều vấn đề, phủ sóng được một diện rộng lớn của đời sống.
+                Do đó, truyện ngắn thường hết sức hạn chế về nhân vật, thời gian và không gian trong truyện ngắn cũng không trải dài như tiểu thuyết.
+                Đôi khi truyện ngắn chỉ là một khoảng khắc của cuộc sống. Ví dụ một truyện ngắn kể về Nhà chứa Tellier của Maupassant thời gian chỉ 24 giờ; Lời phán quyết của Kafka chỉ xảy ra trong vài tiếng. Trong khi cuốn tiểu thuyết Đi tìm thời gian đã mất có thời gian cốt truyện khoảng 50 năm và đến tận 3000 trang.
+                Tiểu thuyết Chiến tranh và hòa bình có tới trên 500 nhân vật.
+                Paul Bourget, nhà văn và nhà phê bình Pháp thế kỷ 20 có nhận định về hai thể loại trên, qua đó cũng giải thích phần nào về sự chênh lệch số trang của chúng: "Phong cách của truyện ngắn và của tiểu thuyết rất khác nhau.
+                Phong cách của truyện ngắn là thuộc về tình tiết. Cái tình tiết mà truyện ngắn dự định diễn tả, truyện ngắn đã tách nó ra, làm cô lập nó lại. Các tình tiết mà cả dãy đã làm nên đối tượng của tiểu thuyết, tiểu thuyết đã làm liên kết chúng, nối chúng lại với nhau. Tiểu thuyết tiến hành thông qua các triển khai, còn truyện ngắn thông qua sự tập trung...
+                Truyện ngắn là độc tấu. Tiểu thuyết là giao hưởng".
+            </p>
+        </div>
+    </div>
+    <div class="col-s-12 col-m-12 col-l-3  right">
+        <ul>
+            <li>Quảng cáo</li>
+            <li>Quảng cáo</li>
+            <li>Quảng cáo</li>
+            <li>Quảng cáo</li>
+            <li>Quảng cáo</li>
+            <li>Quảng cáo</li>
+        </ul>
+    </div>
+</div>
+<div class="row head">
+    <h1> Footer</h1>
+</div>
 </body>
 </html>
