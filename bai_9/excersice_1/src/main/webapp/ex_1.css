@@ -1,0 +1,11 @@
+.enter input{
+    margin: 5px;
+    padding: 5px;
+}
+.enter {
+    text-align: center;
+    height:180px; width:230px;
+    margin:0;
+    padding:10px;
+    border:1px #CCC solid;
+}

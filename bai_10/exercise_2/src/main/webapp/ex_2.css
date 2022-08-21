@@ -1,0 +1,12 @@
+.login {
+    height:180px; width:500px;
+    margin:0;
+    padding:10px;
+}
+.login input {
+    padding:5px; margin:5px
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
