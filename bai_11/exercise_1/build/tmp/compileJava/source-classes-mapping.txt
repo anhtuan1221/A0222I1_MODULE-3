@@ -1,12 +1,14 @@
-model/Product.java
- model.Product
+repository/BaseRepository.java
+ repository.BaseRepository
 service/IProductService.java
  service.IProductService
 repository/IProductRepository.java
  repository.IProductRepository
-service/impl/ProductService.java
- service.impl.ProductService
-repository/impl/ProductRepository.java
- repository.impl.ProductRepository
 controller/ProductServlet.java
  controller.ProductServlet
+repository/impl/ProductRepository.java
+ repository.impl.ProductRepository
+model/Product.java
+ model.Product
+service/impl/ProductService.java
+ service.impl.ProductService

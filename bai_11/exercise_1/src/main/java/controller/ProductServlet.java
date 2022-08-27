@@ -175,12 +175,11 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void createNewProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         double price = Double.parseDouble(request.getParameter("price"));
         String description = request.getParameter("description");
         String manufacturer = request.getParameter("manufacturer");
-        Product product = new Product(id, name, price, description, manufacturer);
+        Product product = new Product(name, price, description, manufacturer);
         boolean check = productService.save(product);
         String message = "A new product was not created";
         if (check) {

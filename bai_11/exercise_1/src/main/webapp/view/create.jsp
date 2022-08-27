@@ -26,7 +26,6 @@
     <p style="color: gold">${message}</p>
 </c:if>
 <form action="/product?action=create" method="post">
-        <pre>ID:                <input type="text" name="id"/></pre>
         <pre>Name:              <input type="text" name="name"> </pre>
         <pre>Price:             <input type="number" name="price"> </pre>
         <pre>Description:       <input type="text" name="description"/></pre>

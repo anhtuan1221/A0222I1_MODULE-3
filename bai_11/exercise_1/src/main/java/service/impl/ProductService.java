@@ -26,7 +26,7 @@ public class ProductService implements IProductService {
 
     @Override
     public boolean remove(int id) {
-        productRepository.remove(id-1);
+        productRepository.remove(id);
         return false;
     }
 
