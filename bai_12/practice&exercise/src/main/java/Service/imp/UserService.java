@@ -17,7 +17,7 @@ public class UserService implements IUserService {
 
     @Override
     public User selectUser(int id) {
-        return userRepository.selectUser(id);
+        return  userRepository.selectUser(id);
     }
 
     @Override
@@ -33,5 +33,15 @@ public class UserService implements IUserService {
     @Override
     public boolean updateUser(User user) throws SQLException {
         return userRepository.updateUser(user);
+    }
+
+    @Override
+    public List<User> searchUser(String name) {
+        return userRepository.search(name);
+    }
+
+    @Override
+    public List<User> sortByName() {
+       return userRepository.sortByName();
     }
 }

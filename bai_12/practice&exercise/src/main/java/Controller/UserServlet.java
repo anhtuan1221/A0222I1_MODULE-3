@@ -35,9 +35,42 @@ public class UserServlet extends HttpServlet {
                     throwables.printStackTrace();
                 }
                 break;
+            case "search":
+                searchUser(request,response);
+                break;
+            case "sort":
+                sortByName(request,response);
+                break;
             default:
                 listUser(request, response);
                 break;
+        }
+    }
+
+    private void sortByName(HttpServletRequest request, HttpServletResponse response) {
+        List<User> userList = userService.sortByName();
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        request.setAttribute("listUser",userList);
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void searchUser(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<User> userList = userService.searchUser(name);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        request.setAttribute("listUser",userList);
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -72,9 +105,9 @@ public class UserServlet extends HttpServlet {
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        User existingUser = userService.selectUser(id);
+        User listUser = userService.selectUser(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
-        request.setAttribute("user", existingUser);
+        request.setAttribute("user", listUser);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

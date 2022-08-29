@@ -10,13 +10,29 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
 <center>
     <h1>User Management</h1>
     <h2>
-        <a href="/users?action=create">Add New User</a>
+        <a href="/users">
+            <button type="button" class="btn btn-primary">Home</button>
+        </a>
+        <a href="/users?action=create">Add New User</a><br>
+
+        <a href="/users?action=sort">Sort by name</a>
+
     </h2>
+    <div>
+        <%-- SEARCH --%>
+        <form class="search-form" action="/users" method="get">
+            <input type="hidden" name="action" value="search">
+            <label class="btn btn-light">User's name:</label>
+            <input type="text" name="name">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
 </center>
 <div align="center">
     <table border="1" cellpadding="5">

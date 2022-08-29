@@ -1,14 +1,14 @@
-Model/User.java
- Model.User
 Repository/BaseRepository.java
  Repository.BaseRepository
-Repository/IUserRepository.java
- Repository.IUserRepository
+Model/User.java
+ Model.User
 Service/IUserService.java
  Service.IUserService
 Service/imp/UserService.java
  Service.imp.UserService
-Repository/imp/UserRepository.java
- Repository.imp.UserRepository
 Controller/UserServlet.java
  Controller.UserServlet
+Repository/imp/UserRepository.java
+ Repository.imp.UserRepository
+Repository/IUserRepository.java
+ Repository.IUserRepository
