@@ -44,4 +44,29 @@ public class UserService implements IUserService {
     public List<User> sortByName() {
        return userRepository.sortByName();
     }
+
+    @Override
+    public User getUserById(int id) {
+        return userRepository.getUserById(id);
+    }
+
+    @Override
+    public void insertUserStore(User user) throws SQLException {
+        userRepository.insertUserStore(user);
+    }
+
+    @Override
+    public List<User> selectUser_procedure() {
+        return userRepository.selectUser_procedure();
+    }
+
+    @Override
+    public boolean updateUser_store_procedure(User user) throws SQLException {
+        return userRepository.updateUser_store_procedure(user);
+    }
+
+    @Override
+    public boolean deleteUser_store(int id) throws SQLException {
+        return userRepository.deleteUser_store(id);
+    }
 }
