@@ -4,11 +4,11 @@ service/IProductService.java
  service.IProductService
 repository/IProductRepository.java
  repository.IProductRepository
+model/Product.java
+ model.Product
 controller/ProductServlet.java
  controller.ProductServlet
 repository/impl/ProductRepository.java
  repository.impl.ProductRepository
-model/Product.java
- model.Product
 service/impl/ProductService.java
  service.impl.ProductService

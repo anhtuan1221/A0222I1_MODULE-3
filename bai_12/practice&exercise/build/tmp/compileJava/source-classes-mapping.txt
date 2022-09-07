@@ -1,5 +1,5 @@
-Repository/BaseRepository.java
- Repository.BaseRepository
+Service/imp/UserService.java
+ Service.imp.UserService
 Model/User.java
  Model.User
 Service/IUserService.java
@@ -8,7 +8,7 @@ Repository/IUserRepository.java
  Repository.IUserRepository
 Controller/UserServlet.java
  Controller.UserServlet
-Service/imp/UserService.java
- Service.imp.UserService
 Repository/imp/UserRepository.java
  Repository.imp.UserRepository
+Repository/BaseRepository.java
+ Repository.BaseRepository

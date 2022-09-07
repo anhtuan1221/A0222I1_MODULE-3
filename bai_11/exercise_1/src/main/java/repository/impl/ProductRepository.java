@@ -57,6 +57,7 @@ public class ProductRepository implements IProductRepository {
     @Override
     public void update(int id, Product product) {
         List<Product> productList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnectDB();
         productList.add(id, product);
     }
 

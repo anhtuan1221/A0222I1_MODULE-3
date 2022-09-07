@@ -27,7 +27,7 @@ public class ProductServlet extends HttpServlet {
                 showEditForm(request, response);
                 break;
             case "delete":
-//                showDeleteForm(request, response);
+///               showDeleteForm(request, response);
                 break;
             case "view":
                 viewProducts(request, response);
